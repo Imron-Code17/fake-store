@@ -17,41 +17,34 @@ class AppBarDetailProduct extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartBloc, CartState>(
-      bloc: sl()..add(GetCartProductsEvent()),
-      builder: (context, state) {
-        final totalProductOnCart = state.cartProducts?.length ?? 0;
-        return AppBar(
-          backgroundColor: kWhiteColor,
-          leading: GestureDetector(
-            child: Icon(
-              Icons.chevron_left_rounded,
-              color: kBlackColor,
-              size: 36.r,
-            ),
+    return AppBar(
+      backgroundColor: kWhiteColor,
+      leading: GestureDetector(
+        child: Icon(
+          Icons.chevron_left_rounded,
+          color: kBlackColor,
+          size: 36.r,
+        ),
+        onTap: () {
+          context.pop();
+        },
+      ),
+      actions: [
+        GestureDetector(
+          child: GestureDetector(
+            child: const Icon(Icons.shopping_cart_outlined, color: kBlackColor),
             onTap: () {
-              context.pop();
+              context.to(Pages.cart);
             },
           ),
-          actions: [
-            GestureDetector(
-              child: Badge.count(
-                  isLabelVisible: totalProductOnCart > 0,
-                  backgroundColor: kErrorColor,
-                  textStyle: theme.font.f10.white.semibold,
-                  count: totalProductOnCart,
-                  child: const Icon(Icons.shopping_cart_outlined,
-                      color: kBlackColor)),
-              onTap: () {
-                context.to(Pages.cart);
-              },
-            ),
-            Gap(16.w)
-          ],
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-        );
-      },
+          onTap: () {
+            context.to(Pages.cart);
+          },
+        ),
+        Gap(16.w)
+      ],
+      centerTitle: true,
+      automaticallyImplyLeading: false,
     );
   }
 

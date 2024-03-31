@@ -17,47 +17,35 @@ class AppBarProduct extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartBloc, CartState>(
-      bloc: sl()..add(GetCartProductsEvent()),
-      builder: (context, state) {
-        final totalProductOnCart = state.cartProducts?.length ?? 0;
-        return AppBar(
-          backgroundColor: kWhiteColor,
-          title: Row(
-            children: [
-              const CardImage.circle(
-                size: 28,
-                image:
-                    'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              ),
-              const Spacer(),
-              Text('Fake Store', style: theme.font.f16.semibold.primary),
-              const Spacer(),
-              GestureDetector(
-                child: const Icon(Icons.search, color: kBlackColor),
-                onTap: () {
-                  context.to(Pages.searchProduct);
-                },
-              ),
-              Gap(12.w),
-              GestureDetector(
-                child: Badge.count(
-                    isLabelVisible: totalProductOnCart > 0,
-                    backgroundColor: kErrorColor,
-                    textStyle: theme.font.f10.white.semibold,
-                    count: totalProductOnCart,
-                    child: const Icon(Icons.shopping_cart_outlined,
-                        color: kBlackColor)),
-                onTap: () {
-                  context.to(Pages.cart);
-                },
-              ),
-            ],
+    return AppBar(
+      backgroundColor: kWhiteColor,
+      title: Row(
+        children: [
+          const CardImage.circle(
+            size: 28,
+            image:
+                'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
           ),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-        );
-      },
+          const Spacer(),
+          Text('Fake Store', style: theme.font.f16.semibold.primary),
+          const Spacer(),
+          GestureDetector(
+            child: const Icon(Icons.search, color: kBlackColor),
+            onTap: () {
+              context.to(Pages.searchProduct);
+            },
+          ),
+          Gap(12.w),
+          GestureDetector(
+            child: const Icon(Icons.shopping_cart_outlined, color: kBlackColor),
+            onTap: () {
+              context.to(Pages.cart);
+            },
+          ),
+        ],
+      ),
+      centerTitle: true,
+      automaticallyImplyLeading: false,
     );
   }
 

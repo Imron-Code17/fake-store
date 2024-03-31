@@ -30,7 +30,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }, (data) {
       AppStorage().saveAuthToken(data: data);
       emit(state.copyWith(status: AuthStatus.success));
-      navigatorKey.currentContext!.to(Pages.product);
+      navigatorKey.currentContext!.toReplacement(Pages.product);
     });
   }
 }
