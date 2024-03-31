@@ -24,7 +24,7 @@ Developed for the Technical Test at PT. Serasi Autoraya, **Fake Store** is a tes
 
 ## Getting Started
 
-To experience **Fake Store** firsthand, you can download the app using the following link: [https://drive.google.com/drive/folders/1Ay0lCmARDZTzbdt2VslRq6m4SMXmHn5p?usp=share_link](#)
+To experience **Fake Store** firsthand, you can download the app using the following link: [https://bit.ly/3IVnpyF](#)
 
 ### Login Credentials:
 To fully experience the functionalities of **Fake Store**, please use the following credentials:
