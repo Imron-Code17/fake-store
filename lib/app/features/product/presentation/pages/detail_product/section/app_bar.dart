@@ -1,14 +1,8 @@
 import 'package:fakestore/app/config/theme/colors.dart';
-import 'package:fakestore/app/config/theme/font.dart';
-import 'package:fakestore/app/config/theme/theme.dart';
 import 'package:fakestore/app/core/utils/extension/context.dart';
-import 'package:fakestore/app/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-
-import '../../../../../../injection_containers.dart';
 import '../../../../../../routes/pages.dart';
 
 class AppBarDetailProduct extends StatelessWidget
